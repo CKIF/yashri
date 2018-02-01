@@ -1,0 +1,5 @@
+mixin input(id, title, i_modifiers)
+    +b.input(class=i_modifiers)
+        +e.LABEL.header(for=id)= title
+        +e.INPUT.field(id=id)&attributes(attributes)
+            block

@@ -1,0 +1,11 @@
+# webstorm project files
+.idea
+
+# node modules vendor dir
+/node_modules
+
+# project specification
+/entrance-task-2
+
+$ build folder
+/public

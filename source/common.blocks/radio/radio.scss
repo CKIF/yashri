@@ -1,0 +1,21 @@
+.radio {
+  border: none;
+  &__title {
+    margin-bottom:5px;
+    font-weight: bold
+  }
+  &__label {
+    display: block;
+    width: 100%;
+    min-height: 38px;
+    margin: 4px 0;
+    padding: 0 10px;
+    background: $lightGray;
+    border-radius: 4px;
+    &:first-child {
+      margin-top: 0;
+    }
+    }
+  &__input {display: block}
+  &__text {display: inline-block; vertical-align: middle; height: 100%}
+}

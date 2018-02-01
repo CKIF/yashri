@@ -1,0 +1,13 @@
+mixin radio(title)
+    +b.radio__title= title
+    +b.FIELDSET.radio
+        +e.LABEL.label(for="radio-1")
+            +e.SPAN.text Готем &#128900; 4 этаж
+        +e.INPUT.input(type="radio" name="radio-1" id="radio-1")
+        +e.LABEL.label(for="radio-2")
+            +e.SPAN.text Поле непаханное &#128900; 4 этаж
+        +e.INPUT.input(type="radio" name="radio-1" id="radio-2")
+        +e.LABEL.label(for="radio-3")
+            +e.SPAN.text Тёмная башня &#128900; 4 этаж
+        +e.INPUT.input(type="radio" name="radio-1" id="radio-3")
+                block

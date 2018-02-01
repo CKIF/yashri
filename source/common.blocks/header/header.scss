@@ -1,0 +1,9 @@
+.header {
+  @extend .flex,
+          .align-center,
+          .max-width;
+  padding: 0 24.6px;
+  min-height: 71px;
+  background: #fff;
+  box-shadow: 0 1px 0 0 $lightGray;
+}

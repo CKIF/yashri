@@ -1,0 +1,14 @@
+.footer {
+  @extend .flex,
+          .flex-row,
+          .align-center,
+          .just-center,
+          .max-width;
+  padding: 0 24.6px;
+  min-height: 71px;
+  background: $white;
+  box-shadow: 0 -1px 0 0 $lightGray;
+  &__button {
+    margin: 0 8px;
+  }
+}
