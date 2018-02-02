@@ -82,6 +82,7 @@
 	position: relative;
 	text-indent: -99999px;
 	overflow: hidden;
+	background-size: cover;
 	background-repeat: no-repeat;
 }
 
@@ -388,6 +389,9 @@ button.ui-button::-moz-focus-inner {
 	list-style-image: url("data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7");
 }
 .ui-menu .ui-menu-item-wrapper {
+	min-height: 34px;
+	line-height: 34px;
+	vertical-align: middle;
 	position: relative;
 	padding: 3px 1em 3px .4em;
 }
@@ -400,7 +404,7 @@ button.ui-button::-moz-focus-inner {
 }
 .ui-menu .ui-state-focus,
 .ui-menu .ui-state-active {
-	margin: -1px;
+	//margin: -1px;
 }
 
 /* icon support */
@@ -408,7 +412,7 @@ button.ui-button::-moz-focus-inner {
 	position: relative;
 }
 .ui-menu-icons .ui-menu-item-wrapper {
-	padding-left: 2em;
+	padding-left: 3em;
 }
 
 /* left-aligned */
@@ -416,7 +420,7 @@ button.ui-button::-moz-focus-inner {
 	position: absolute;
 	top: 0;
 	bottom: 0;
-	left: .2em;
+	left: .8em;
 	margin: auto 0;
 }
 

@@ -3,6 +3,7 @@ include common.blocks/form/form.pug
 include common.blocks/side/side.pug
 include common.blocks/input/input.pug
 include common.blocks/dropdown/dropdown.pug
+include common.blocks/cell-list/cell-list.pug
 include common.blocks/radio/radio.pug
 include common.blocks/button/button.pug
 
@@ -17,7 +18,7 @@ html(lang="en")
         meta(name="author" content="kauzlein@gmail.com")
         link(rel="stylesheet" href="css/styles.min.css")
     +b.BODY.body
-
+        |
         +b.HEADER.header(class='body__header')
             +b.IMG.logo(src='img/logo.svg' title='Логотип Яндекс.Переговорки')
         +b.MAIN.main
@@ -26,15 +27,18 @@ html(lang="en")
             +form('meeting')(class='_columnar')
                 +side(class='side_left form_columnar__side')
                     +input('theme', 'Тема', 'side__input')(placeholder='О чем будете говорить?' class='_max')
-                    +dropdown('members', 'Участники')(multiple class='_max')
+                    +dropdown('members', 'Участники', 'Например, Тор Одинович')(multiple class='_max')
                         each user in users
-                            +user(user.name, user.avatar, user.floor)
+                            +user(user.name, user.avatar, user.floor, 'OPTION')
+                    +cell-list()(class='side__cell-list')
+                        each user in users
+                                +user(user.name, user.avatar)(class='_max')
 
                 +side(class='side_right form_columnar__side')
                     +b.date-group
-                        +input('date', 'Дата', '_inline side__input date-group__input')(class='_date _max')
-                        +input('begin', 'Начало', '_inline _dash side__input date-group__input')(class='_time')
-                        +input('end', 'Конец', '_inline side__input date-group__input')(class='_time')
+                        +input('date', 'Дата', '_inline side__input date-group__input')(placeholder='2 Февраль, 18' class='_date _max')
+                        +input('begin', 'Начало', '_inline _dash side__input date-group__input')(placeholder='08:00' class='_time')
+                        +input('end', 'Конец', '_inline side__input date-group__input')(placeholder='08:30' class='_time')
                     +radio('Рекомендованные переговорки')
 
         +b.FOOTER.footer

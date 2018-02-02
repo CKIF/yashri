@@ -1,0 +1,24 @@
+@import "partials/rules";
+@import "partials/fonts";
+@import "partials/grid";
+@import "partials/sprite";
+//@include sprites("partials/sprite")
+@include sprites($spritesheet-sprites);
+
+@import "../common.blocks/body/body";
+@import "../common.blocks/main/main";
+@import "../common.blocks/header/header";
+@import "../common.blocks/logo/logo";
+@import "../common.blocks/user/user";
+@import "../common.blocks/form/form";
+@import "../common.blocks/side/side";
+@import "../common.blocks/date-group/date-group";
+@import "../common.blocks/input/input";
+@import "../common.blocks/dropdown/dropdown";
+@import "../common.blocks/cell-list/cell-list";
+@import "../common.blocks/radio/radio";
+@import "../common.blocks/button/button";
+@import "../common.blocks/footer/footer";
+
+@import "../vendor/jquery-ui/jquery-ui";
+@import "../vendor/jquery-ui/jquery-ui.theme";

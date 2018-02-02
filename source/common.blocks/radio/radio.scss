@@ -16,6 +16,10 @@
       margin-top: 0;
     }
     }
+  &__label.ui-state-active, &__label.ui-state-active:hover {
+    background: $blue!important;
+    color: $white;
+  }
   &__input {display: block}
   &__text {display: inline-block; vertical-align: middle; height: 100%}
 }

@@ -1,6 +1,7 @@
 var	gulp = require('gulp'),
     concat = require('gulp-concat'),
     rename = require('gulp-rename'),
+    merge = require('merge-stream'),
     del = require('del'),
     cache = require('gulp-cache'),
 	sass = require('gulp-sass'),
@@ -14,7 +15,9 @@ var	gulp = require('gulp'),
     uglify = require('gulp-uglify'),
     cssnano = require('gulp-cssnano'),
     sourcemaps = require('gulp-sourcemaps'),
-    babel = require("gulp-babel");
+    babel = require("gulp-babel"),
+    spritesmith = require('gulp.spritesmith');
+
 
 var reload = browserSync.reload;
 
@@ -34,8 +37,8 @@ gulp.task('default', ['build'], function (callback) {
 });
 
 gulp.task('build', function (callback) {
-    runSequence('clean:public', 'css',
-        ['useref', 'img'],
+    runSequence('clean:public', 'img', 'css',
+        ['useref'],
         callback
     )
 });
@@ -63,7 +66,7 @@ gulp.task('html', function () {
 });
 
 gulp.task('css', function () {
-    gulp.src([params.from + 'styles.scss'/*, 'touch.blocks/**__DELETE_THIS__/*.scss'*/])
+    gulp.src([params.from + '/scss/styles.scss'/*, 'touch.blocks/**__DELETE_THIS__/*.scss'*/])
         .pipe(sourcemaps.init())
         .pipe(sass())
         .pipe(autoprefixer({
@@ -84,7 +87,7 @@ gulp.task('js', function(){
         .pipe(gulp.dest(params.out))
 });
 
-gulp.task('img', /*['sprite'],*/ function(){
+gulp.task('img', ['sprite'], function(){
     return gulp.src(params.from + '/**/*.+(png|jpg|jpeg|gif|svg)')
     // Caching images that ran through imagemin
         .pipe(cache(imagemin({
@@ -92,6 +95,29 @@ gulp.task('img', /*['sprite'],*/ function(){
         })))
         .pipe(rename({dirname: ''}))
         .pipe(gulp.dest(params.out + '/img'))
+});
+
+//Combine images from /icons and /logos to sprites
+gulp.task('sprite', function () {
+    // Generate spritesheets
+    var userSpriteData = gulp.src(params.from + '/common.blocks/user/**/*.+(png|jpg|jpeg|gif|svg)').pipe(spritesmith({
+        imgName: 'users.png',
+        imgPath: '/img/sprites/users.png',
+        cssName: '_users.scss',
+        cssFormat: 'scss',
+        padding: 10,
+        cssVarMap: function (sprite) {
+            sprite.name = 'user__avatar_' + sprite.name;
+        }
+    }));
+
+    var logoImgStream = userSpriteData.img.pipe(gulp.dest(params.out + '/img/sprites'));
+
+    var scssStream = merge(userSpriteData.css)
+        .pipe(concat('_sprite.scss'))
+        .pipe(gulp.dest(params.from +'/scss/partials'));
+
+    return merge(logoImgStream, scssStream);
 });
 
 gulp.task('fonts', function() {

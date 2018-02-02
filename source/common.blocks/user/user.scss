@@ -1,8 +1,19 @@
 .user {
 
+  &__name {
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 10px;
+    padding-right: 30px;
+    font-size: 13px;
+  }
   &__avatar {
-    width: 24px;
+    display: inline-block;
     border-radius: 50%;
-    background-size: cover;
+    vertical-align: middle;
+  }
+  &__avatar.ui-icon {
+    height: 24px;
+    width: 24px;
   }
 }

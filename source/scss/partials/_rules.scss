@@ -5,6 +5,11 @@ $mildGray: #afb4b8;
 $brightGray: #858E98;
 $blue: #007dff;
 
+@mixin pseudo($display: block, $pos: absolute, $content: ''){
+  content: $content;
+  display: $display;
+  position: $pos;
+}
 
 .flex {display: flex}
 .flex-row {flex-flow: row wrap}
