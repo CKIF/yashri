@@ -1,4 +1,5 @@
-mixin user(name, avatar)
-    +b.SPAN.user
-        +e.SPAN.user-avatarr
-        +e.SPAN.name= name
+- var users = [{name: "Лекс Лютер", avatar: "img/luter.jpg", floor: 2},{name: "Томас Андерсон", avatar: "img/anderson.jpg", floor: 1},{name: "Дарт Вейдер", avatar: "img/vader.jpg", floor: 1},{name: "Кларк Кент", avatar: "img/kent.jpg", floor: 3},{name: "Джон Уик", avatar: "img/wick.jpg", floor: 1},{name: "Рик Декард", avatar: "img/deckard.jpg", floor: 2},{name: "Питер Блад", avatar: "img/blood.jpg", floor: 3},{name: "Ретт Батлер", avatar: "img/butler.jpg", floor: 3}]
+
+mixin user(name, avatar, floor)
+    +e.OPTION.item.user(data-class="avatar" data-style= avatar ? "background-image: url(" + avatar + ")" : "background-image: url(http://www.gravatar.com/b3e04a46e85ad3e165d66f5d927eb609?d=monsterid&r=r&s=24);")
+        +e= name + ' 🞄 ' + floor + " этаж"

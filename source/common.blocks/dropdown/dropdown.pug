@@ -1,7 +1,6 @@
 include ../user/user.pug
 
 
-- var users = [{name: "Лекс Лютер", avatar: "img/avatar/luter.png", floor: 2},{name: "Томас Андерсон", avatar: "img/avatar/anderson.jpg", floor: 1},{name: "Дарт Вейдер", avatar: "img/avatar/vader.jpg", floor: 1},{name: "Кларк Кент", avatar: "img/avatar/kent.jpg", floor: 3},{name: "Джон Уик", avatar: "img/avatar/wick.jpg", floor: 1},{name: "Рик Декард", avatar: "img/avatar/deckard.jpg", floor: 2},{name: "Питер Блад", avatar: "img/avatar/blood.jpg", floor: 3},{name: "Ретт Батлер", avatar: "img/avatar/butler.jpg", floor: 3}]
 
 
 mixin dropdown(id, title)
@@ -9,8 +8,4 @@ mixin dropdown(id, title)
         +e.LABEL.header(for=id)= title
         +e.SELECT.select(id=id class!=attributes.class)&attributes(attributes)
             +e.item(selected disabled hidden class="_disabled") Например, Тор Одинович
-            each user in users
-                +e.item(data-class="avatar" data-style= user.avatar ? "background-image: url("+user.avatar+")" : "background-image: url(http://www.gravatar.com/avatar/b3e04a46e85ad3e165d66f5d927eb609?d=monsterid&r=r&s=24);")
-                    +user(user.name, user.avatar)
-                    span= ' 🞄 ' + user.floor + " этаж"
                 block

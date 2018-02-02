@@ -10,25 +10,33 @@ doctype html
 html(lang="en")
     head
         meta(charset="utf-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1")
+        meta(http-equiv="x-ua-compatible" content="ie=edge")
         title Создать встречу. Яндекс.Переговорки
         meta(name="description" content="Создание новой встречи.")
         meta(name="author" content="kauzlein@gmail.com")
         link(rel="stylesheet" href="css/styles.min.css")
     +b.BODY.body
+
         +b.HEADER.header(class='body__header')
             +b.IMG.logo(src='img/logo.svg' title='Логотип Яндекс.Переговорки')
         +b.MAIN.main
             +b.H1.title Новая встреча
+
             +form('meeting')(class='_columnar')
                 +side(class='side_left form_columnar__side')
                     +input('theme', 'Тема', 'side__input')(placeholder='О чем будете говорить?' class='_max')
                     +dropdown('members', 'Участники')(multiple class='_max')
+                        each user in users
+                            +user(user.name, user.avatar, user.floor)
+
                 +side(class='side_right form_columnar__side')
                     +b.date-group
                         +input('date', 'Дата', '_inline side__input date-group__input')(class='_date _max')
                         +input('begin', 'Начало', '_inline _dash side__input date-group__input')(class='_time')
                         +input('end', 'Конец', '_inline side__input date-group__input')(class='_time')
                     +radio('Рекомендованные переговорки')
+
         +b.FOOTER.footer
             +button('Отмена')(class='footer__button', type='submit' form='meeting')
             +button('Создать встречу')(class='_blue footer__button', type='submit', form='meeting')
