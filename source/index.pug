@@ -23,16 +23,20 @@ html(lang="en")
             +b.IMG.logo(src='img/logo.svg' title='Логотип Яндекс.Переговорки')
         +b.MAIN.main
             +b.H1.title Новая встреча
+            +b.exit
+                +e &times;
 
             +form('meeting')(class='_columnar')
                 +side(class='side_left form_columnar__side')
                     +input('theme', 'Тема', 'side__input')(placeholder='О чем будете говорить?' class='_max')
+                        +e.clear &times;
                     +dropdown('members', 'Участники', 'Например, Тор Одинович')(multiple class='_max')
                         each user in users
                             +user(user.name, user.avatar, user.floor, 'OPTION')
                     +cell-list()(class='side__cell-list')
                         each user in users
                                 +user(user.name, user.avatar)(class='_max')
+                                    +e.clear &times;
 
                 +side(class='side_right form_columnar__side')
                     +b.date-group

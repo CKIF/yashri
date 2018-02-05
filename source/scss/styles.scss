@@ -5,8 +5,6 @@
 //@include sprites("partials/sprite")
 @include sprites($spritesheet-sprites);
 
-@import "../common.blocks/body/body";
-@import "../common.blocks/main/main";
 @import "../common.blocks/header/header";
 @import "../common.blocks/logo/logo";
 @import "../common.blocks/user/user";
@@ -22,3 +20,57 @@
 
 @import "../vendor/jquery-ui/jquery-ui";
 @import "../vendor/jquery-ui/jquery-ui.theme";
+
+
+.body {
+  @extend .flex,
+  .flex-column,
+  .helvetica;
+  min-height: 100vh;
+  &__header {
+    margin-bottom: 40px;
+  }
+}
+
+.main {
+  @extend .grow;
+  width: 68.13%;
+  margin: 0 auto;
+}
+
+
+.input, .user, .radio {
+  &__clear {
+    @extend .posa;
+    font-size: 20px;
+    color: $mildGray;
+    cursor: pointer;
+    &:hover {
+      color: $brightGray;
+    }
+  }
+}
+.input__clear {right: 10px;top: 27px;}
+.user__clear {right: 6px;top: 2px;}
+.radio__clear {right: 10px;top: 8px;}
+
+
+.title {
+  @extend .i-flex;
+  font-size: 1.3em;}
+.exit {
+  @extend .i-flex,
+          .align-center,
+          .just-center;
+  min-width: 24px;
+  min-height: 24px;
+  float: right;
+  font-size: 21px;
+  color: $brightGray;
+  background: $lightGray;
+  border-radius: 50%;
+  cursor: pointer;
+  &:after {
+    clear: both;
+  }
+}

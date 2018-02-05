@@ -25,9 +25,13 @@ $(document).ready(function() {
     });
 
     var dateOptions  = $.extend(
-        {},
+        {   showOn: "button",
+            buttonImage: "img/calendar.svg",
+            buttonImageOnly: true,
+            buttonText: "Select date"},
         $.datepicker.regional["ru"],
         { dateFormat: "d MM, y"}
+
     );
 
     $(".input__field_date").datepicker(dateOptions);

@@ -12,10 +12,13 @@ $blue: #007dff;
 }
 
 .flex {display: flex}
+.i-flex {display: inline-flex}
 .flex-row {flex-flow: row wrap}
 .flex-column {flex-flow: column nowrap}
 .align-center {align-items: center}
 .just-center {justify-content: center}
 .grow {flex-grow: 1}
 .max-width {width: 100%}
-.bold {font-weight: bold;}
+.bold {font-weight: bold}
+.posa {position: absolute}
+.posr {position: relative}
