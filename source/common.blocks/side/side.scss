@@ -2,6 +2,8 @@
   @extend .flex,
           .flex-column;
   flex: 1;
+
+  //mix .side:
   &__input, &__dropdown, &__cell-list {
     margin: 24px 0;
   }

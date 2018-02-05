@@ -1,0 +1,16 @@
+@import "_date/date";
+@import "_max/max";
+@import "_time/time";
+
+.input__field {
+  min-height: 38px;
+  padding: 0 10px;
+  border: 2px solid $lightGray;
+  border-radius: 4px;
+  &::placeholder {color: $brightGray;}
+
+  &:active, &:focus {
+    outline: none;
+    border: 2px solid $blue;
+  }
+}

@@ -1,0 +1,20 @@
+.dropdown__select {
+  min-height: 38px;
+  padding: 0 10px;
+  border: 2px solid $lightGray;
+  border-radius: 4px;
+  background-color: $white;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  &_max {
+    @extend .max-width;
+  }
+  &:active, &:focus {
+    color: $black;
+    outline: none;
+    border: 2px solid $blue;
+  }
+  &::-ms-expand {
+    display: none;
+  }
+}

@@ -1,0 +1,13 @@
+@import "_right/right";
+
+.radio__text {
+  @extend .i-flex,
+  .flex-column;
+  font-size:0.82em;
+  flex-wrap: wrap;
+  vertical-align: middle;
+  height: 100%;
+  @media (min-width: 626px) {
+    flex-flow: row nowrap;
+  }
+}

@@ -1,19 +1,6 @@
-.user {
+@import "__avatar/_avatar";
+@import "__name/_name";
 
-  &__name {
-    display: inline-block;
-    vertical-align: middle;
-    margin-left: 10px;
-    padding-right: 30px;
-    font-size: 13px;
-  }
-  &__avatar {
-    display: inline-block;
-    border-radius: 50%;
-    vertical-align: middle;
-  }
-  &__avatar.ui-icon {
-    height: 24px;
-    width: 24px;
-  }
+.user {
+  @extend .posr;
 }

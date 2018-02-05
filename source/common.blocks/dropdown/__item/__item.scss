@@ -1,0 +1,4 @@
+.dropdown__item {
+  color: $black;
+  &_disabled, &:first-child {color: $brightGray;}
+}

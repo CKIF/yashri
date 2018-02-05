@@ -1,10 +1,12 @@
+@import "__input/_input";
+
 .date-group {
   @extend .flex,
-          .flex-row;
-  flex-wrap: nowrap;
-  &__input {
-    margin: 24px 10px;
-    &:first-child {flex-grow: 1; margin-left: 0}
-    &:last-child {flex-shrink: 1; margin-right: 0}
+          .flex-column,
+          .just-center;
+  margin-bottom: 20px;
+  @media (min-width: 406px) {
+    flex-flow: row nowrap;
+    margin-bottom: 0;
   }
 }

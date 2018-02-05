@@ -1,21 +1,7 @@
+@import "__header/_header";
+@import "__field/_field";
+@import "_inline/inline";
+
 .input {
-  &_inline {display: inline-block}
-  &__header {
-    @extend .bold;
-    display: block;
-    margin-bottom: 5px;
-  }
-  &__field {
-    min-height: 38px;
-    padding: 0 10px;
-    border: 2px solid $lightGray;
-    border-radius: 4px;
-    &::placeholder {color: $brightGray;}
-    &_max {@extend .max-width;}
-    &_time {max-width: 72px}
-    &:active, &:focus {
-      outline: none;
-      border: 2px solid $blue;
-    }
-  }
+  @extend .posr;
 }

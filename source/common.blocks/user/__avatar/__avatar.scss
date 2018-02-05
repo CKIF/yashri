@@ -1,0 +1,9 @@
+.user__avatar {
+  display: inline-block;
+  border-radius: 50%;
+  vertical-align: middle;
+}
+.user__avatar.ui-icon {
+  height: 24px;
+  width: 24px;
+}

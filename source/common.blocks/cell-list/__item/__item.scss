@@ -1,0 +1,11 @@
+.cell-list__item {
+  margin: 5px;
+  display: inline-flex;
+  max-height: 24px;
+  max-width: 170px;
+  line-height: 24px;
+  border-radius: 16px;
+  vertical-align: middle;
+  background: $lightGray;
+  cursor: pointer;
+}

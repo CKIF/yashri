@@ -1,36 +1,10 @@
+@import "__item/_item";
+@import "__header/_header";
+@import "__select/_select";
+
 .dropdown {
 
-  &__select {
-    min-height: 38px;
-    padding: 0 10px;
-    border: 2px solid $lightGray;
-    border-radius: 4px;
-    color: $brightGray;
-    background-color: $white;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    &_max {
-      @extend .max-width;
-    }
-    &:active, &:focus {
-      color: $black;
-      outline: none;
-      border: 2px solid $blue;
-    }
-    &::-ms-expand {
-      display: none;
-    }
-  }
-  &__header {
-    @extend .bold;
-    display: block;
-    margin-bottom: 5px;
-  }
-  &__item {
-    color: $black;
-  }
 }
-
 
 .ui-selectmenu-button.ui-button {
   @extend .dropdown__select,

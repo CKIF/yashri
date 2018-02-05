@@ -1,13 +1,5 @@
+@import "_columnar/columnar";
+
 .form {
-  &_columnar {
-    @extend .flex,
-            .flex-row,
-            .just-center;
-    &__side.side_left {
-      margin-right: 16px;
-    }
-    &__side.side_right {
-      margin-left: 16px;
-    }
-  }
+
 }
