@@ -10,14 +10,14 @@
   @extend .dropdown__select,
           .max-width;
 }
-#members-menu {
+.ui-menu {
   max-height: 150px;
 }
-#members-menu::-webkit-scrollbar {
+.ui-menu::-webkit-scrollbar {
   width: 10px;
   background: $white;
 }
-#members-menu::-webkit-scrollbar-thumb {
+.ui-menu::-webkit-scrollbar-thumb {
   border-radius: 5px;
   background: #d5dfe9;
 }

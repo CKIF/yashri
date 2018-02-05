@@ -194,3 +194,11 @@ a.ui-button:focus {
 .ui-widget-shadow {
 	box-shadow: 0 0 5px #666666;
 }
+
+.ui-selectmenu-text {
+	color: #858E98;
+}
+
+.ui-selectmenu-button[aria-labelledby^="ui-id"] .ui-selectmenu-text {
+	color: #000;
+}
