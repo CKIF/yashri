@@ -1,7 +1,7 @@
 .date-group__input {
   @extend .posr;
   margin: 5px 0;
-  @media (min-width: 406px) {
+  @media (min-width: 630px) {
     margin: 24px 10px;
   }
   &:first-child {flex-grow: 1; margin-left: 0}

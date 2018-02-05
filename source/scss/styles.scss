@@ -66,11 +66,12 @@
   min-height: 24px;
   float: right;
   font-size: 21px;
-  color: $brightGray;
+  color: $mildGray;
   background: $lightGray;
   border-radius: 50%;
   cursor: pointer;
   &:after {
     clear: both;
   }
+  &:hover {  color: $brightGray;  }
 }

@@ -1,0 +1,13 @@
+@media (min-width: 630px) {
+  .input_dash {
+    margin-right:22px;
+  }
+
+  .input_dash:after {
+    @include pseudo();
+    content: '–';
+    right: -19px;
+    top: 53%;
+  }
+}
+
