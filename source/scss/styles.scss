@@ -2,6 +2,8 @@
 @import "partials/fonts";
 @import "partials/grid";
 @import "partials/sprite";
+@import "partials/calendar";
+
 //@include sprites("partials/sprite")
 @include sprites($spritesheet-sprites);
 
@@ -18,8 +20,9 @@
 @import "../common.blocks/button/button";
 @import "../common.blocks/footer/footer";
 
-@import "../vendor/jquery-ui/jquery-ui";
-@import "../vendor/jquery-ui/jquery-ui.theme";
+
+//@import "../vendor/jquery-ui/jquery-ui";
+//@import "../vendor/jquery-ui/jquery-ui.theme";
 
 
 .body {
@@ -34,8 +37,11 @@
 
 .main {
   @extend .grow;
-  width: 68.13%;
+  width: 90%;
   margin: 0 auto;
+  @media (min-width: 426px) {
+    width: 68.13%;
+  }
 }
 
 

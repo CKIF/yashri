@@ -3,14 +3,14 @@
 mixin user(name, avatar, floor, userTag)
     - var tagName = userTag;
     if tagName === 'OPTION'
-        +e(tagName).item.user(data-class="avatar" data-style= avatar ? "background-image: url(img/" + avatar + ".jpg)" : "background-image: url(http://www.gravatar.com/b3e04a46e85ad3e165d66f5d927eb609?d=monsterid&r=r&s=24);")
+        +e(tagName).item.user(class='_' + avatar data-class="avatar" data-style= avatar ? "background-image: url(img/" + avatar + ".jpg)" : "background-image: url(http://www.gravatar.com/b3e04a46e85ad3e165d66f5d927eb609?d=monsterid&r=r&s=24);")
             +b.user
                 +e.SPAN.name= name
                 if floor
                     +e.SPAN.floor= ' 🞄 ' + floor + " этаж"
     else
-        +e(tagName).item
-            +b.user
+        +e(tagName).item&attributes(attributes)
+            +b.user(class='_' + avatar)
                 +e.SPAN.avatar(class='_' + avatar)
                 +e.SPAN.name= name
                 if floor

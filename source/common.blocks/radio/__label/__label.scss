@@ -1,11 +1,19 @@
 .radio__label {
-  display: block;
+  @extend .flex,
+          .align-center;
   width: 100%;
   min-height: 38px;
   margin: 4px 0;
-  padding: 0 10px;
   background: $lightGray;
   border-radius: 4px;
+  padding: .6em 1em;
+  position: relative;
+  line-height: normal;
+  margin-right: .1em;
+  cursor: pointer;
+  vertical-align: middle;
+  user-select: none;
+  overflow: visible;
   &:first-child {
     margin-top: 0;
   }

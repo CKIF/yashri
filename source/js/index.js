@@ -1,5 +1,13 @@
 $(document).ready(function() {
 
+    var users = [{name: "Лекс Лютер", avatar: "luter", floor: 2},{name: "Томас Андерсон", avatar: "anderson", floor: 1},{name: "Дарт Вейдер", avatar: "vader", floor: 1},{name: "Кларк Кент", avatar: "kent", floor: 3},{name: "Джон Уик", avatar: "wick", floor: 1},{name: "Рик Декард", avatar: "deckard", floor: 2},{name: "Питер Блад", avatar: "blood", floor: 3},{name: "Ретт Батлер", avatar: "butler", floor: 3}];
+
+    var dropdownItems = $(".dropdown__item, user, user"+users.avatar);
+
+    var cellListItems = $(".cell-list__item").children();
+    console.log(dropdownItems);
+    console.log(cellListItems);
+
     //$("#radioset").buttonset();
     jQuery(function ($) {
         $.datepicker.regional['ru'] = {
@@ -28,7 +36,9 @@ $(document).ready(function() {
         {   showOn: "button",
             buttonImage: "img/calendar.svg",
             buttonImageOnly: true,
-            buttonText: "Select date"},
+            buttonText: "Select date",
+            showOtherMonths: true,
+            selectOtherMonths: true},
         $.datepicker.regional["ru"],
         { dateFormat: "d MM, y"}
 
@@ -48,7 +58,7 @@ $(document).ready(function() {
 
 
 
-    $( function() {
+/*    $( function() {
         $.widget( "custom.iconselectmenu", $.ui.selectmenu, {
             _renderItem: function( ul, item ) {
                 var li = $( "<li>" ),
@@ -72,7 +82,7 @@ $(document).ready(function() {
             .iconselectmenu()
             .iconselectmenu( "menuWidget")
             .addClass( "ui-menu-icons" );
-    } );
+    } );*/
 
 
 // Click actions

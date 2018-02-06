@@ -1,3 +1,6 @@
+@import "_right/right";
+@import "_left/left";
+
 .side {
   @extend .flex,
           .flex-column;

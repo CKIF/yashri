@@ -1,0 +1,58 @@
+.ui-datepicker {
+  padding: 20px;
+  background: $white;
+  box-shadow: rgba(0, 44, 92, 0.28) 0px 1px 8px 0px;
+  text-align: center;
+  table {
+    font-family: monospace, monospace;
+  }
+  a {
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 24px;
+    color: inherit;
+    text-decoration: none;
+  }
+  th {
+    font-weight:normal;
+  }
+}
+.ui-datepicker-prev {
+  margin: 8px 0;
+  float: left;
+  cursor: pointer;
+}
+
+.ui-datepicker-next {
+  margin: 8px 0;
+  float: right;
+  cursor: pointer;
+}
+
+.ui-datepicker-title {
+  padding-top: 40px;
+  margin: 8px 0;
+  font-weight: bold;
+}
+
+.ui-datepicker-calendar td {
+  cursor: pointer;
+  width: 14.585%;
+  height: 24px;
+  margin-bottom: 5px;
+  box-sizing: border-box;
+}
+
+.ui-datepicker-other-month {
+  color: $mildGray!important;
+}
+
+.ui-datepicker-today {
+  background: $blue;
+  border-radius: 4px;
+  color: $white;
+}
+
+.ui-datepicker-week-end {
+  color: red;
+}

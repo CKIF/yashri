@@ -30,12 +30,12 @@ html(lang="en")
                 +side(class='side_left form_columnar__side')
                     +input('theme', 'Тема', 'side__input')(placeholder='О чем будете говорить?' class='_max')
                         +e.clear &times;
-                    +dropdown('members', 'Участники', 'Например, Тор Одинович')(multiple class='_max')
+                    +dropdown('members', 'Участники', 'Например, Тор Одинович')(class='_max')
                         each user in users
                             +user(user.name, user.avatar, user.floor, 'OPTION')
                     +cell-list()(class='side__cell-list')
                         each user in users
-                                +user(user.name, user.avatar)(class='_max')
+                                +user(user.name, user.avatar)(class='__user')
                                     +e.clear &times;
 
                 +side(class='side_right form_columnar__side')
