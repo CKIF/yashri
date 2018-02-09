@@ -33,7 +33,7 @@ $(document).ready(function() {
     });
 
     var dateOptions  = $.extend(
-        {   showOn: "button",
+        {   showOn: "both",
             buttonImage: "img/calendar.svg",
             buttonImageOnly: true,
             buttonText: "Select date",
@@ -94,4 +94,11 @@ $(document).ready(function() {
             $(this).removeClass("test");
         }
     );
+
+});
+
+//----------События клика----------
+
+$(".dropdown").click(function(){
+    $(".dropdown__items").toggle();
 });

@@ -1,23 +1,13 @@
+@import "__items/_items";
 @import "__item/_item";
 @import "__header/_header";
 @import "__select/_select";
 
 .dropdown {
-
+  position: relative;
 }
 
 .ui-selectmenu-button.ui-button {
   @extend .dropdown__select,
           .max-width;
-}
-.ui-menu {
-  max-height: 150px;
-}
-.ui-menu::-webkit-scrollbar {
-  width: 10px;
-  background: $white;
-}
-.ui-menu::-webkit-scrollbar-thumb {
-  border-radius: 5px;
-  background: #d5dfe9;
 }

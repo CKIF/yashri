@@ -2,5 +2,10 @@
 @import "__name/_name";
 
 .user {
-  @extend .posr;
+  @extend .posr,
+          .flex,
+          .align-center,
+          .max-width,
+          .flex-row;
+  flex-wrap: nowrap;
 }

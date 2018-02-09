@@ -1,6 +1,6 @@
 include ../node_modules/bemto.pug/bemto.pug
 include common.blocks/form/form.pug
-include common.blocks/side/side.pug
+include common.blocks/row/row
 include common.blocks/input/input.pug
 include common.blocks/dropdown/dropdown.pug
 include common.blocks/cell-list/cell-list.pug
@@ -21,30 +21,39 @@ html(lang="en")
         |
         +b.HEADER.header(class='body__header')
             +b.IMG.logo(src='img/logo.svg' title='Логотип Яндекс.Переговорки')
-        +b.MAIN.main
-            +b.H1.title Новая встреча
+        +b.MAIN.event-page
+            +e.H1.title Новая встреча
             +b.exit
                 +e &times;
 
             +form('meeting')(class='_columnar')
-                +side(class='side_left form_columnar__side')
-                    +input('theme', 'Тема', 'side__input')(placeholder='О чем будете говорить?' class='_max')
-                        +e.clear &times;
-                    +dropdown('members', 'Участники', 'Например, Тор Одинович')(class='_max')
-                        each user in users
-                            +user(user.name, user.avatar, user.floor, 'OPTION')
-                    +cell-list()(class='side__cell-list')
-                        each user in users
+                +row(class='row_bordered')
+                    +e.ceil._nopad_bottom
+                        +input('theme', 'Тема')(placeholder='О чем будете говорить?' class='_max')
+                            +e.clear &times;
+                    +e.ceil._nopad_top
+                        +b.date-group
+                            +input('date', 'Дата', '_inline date-group__date')(placeholder='2 Февраль, 18' class='_date _max')
+                            +e.time
+                                +input('begin', 'Начало', '_dash date-group__time__left')(placeholder='08:00' class='_time')
+                                +input('end', 'Конец', 'date-group__time__right')(placeholder='08:30' class='_time')
+
+
+
+                +row(class='row_bordered')
+                    +e.ceil._bordered
+                        +dropdown('members', 'Участники')(placeholder='Например, Тор Одинович' class='_max')
+                            +e.items
+                                each user in users
+                                    +user(user.name, user.avatar, user.floor, 'OPTION')
+                        +cell-list()(class='side__cell-list')
+                            each user in users
                                 +user(user.name, user.avatar)(class='__user')
                                     +e.clear &times;
 
-                +side(class='side_right form_columnar__side')
-                    +b.date-group
-                        +input('date', 'Дата', '_inline side__input date-group__input')(placeholder='2 Февраль, 18' class='_date _max')
-                        +input('begin', 'Начало', '_inline _dash side__input date-group__input')(placeholder='08:00' class='_time')
-                        +input('end', 'Конец', '_inline side__input date-group__input')(placeholder='08:30' class='_time')
-                    +radio('Рекомендованные переговорки')
-
+                    +e.ceil
+                        +radio('Рекомендованные переговорки')
+            +b.event-page__delete_mobile Удалить встречу
         +b.FOOTER.footer
             +button('Отмена')(class='footer__button', type='submit' form='meeting')
             +button('Создать встречу')(class='_blue footer__button', type='submit', form='meeting')

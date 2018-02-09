@@ -1,10 +1,15 @@
 @import "__input/_input";
+@import "__time/_time";
+@import "__date/_date";
 
 .date-group {
   @extend .flex,
-          .flex-column,
-          .just-center;
-  margin-bottom: 20px;
+          .flex-row,
+          .align-center;
+
+  @media (min-width: 426px) {
+    margin-bottom: 20px;
+  }
   @media (min-width: 630px) {
     flex-flow: row nowrap;
     margin-bottom: 0;

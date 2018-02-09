@@ -1,0 +1,7 @@
+.row_bordered {
+  border-bottom: 8px solid $lightGray;
+
+  @media (min-width: 426px) {
+    border-bottom: none;
+  }
+}

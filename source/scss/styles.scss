@@ -11,7 +11,7 @@
 @import "../common.blocks/logo/logo";
 @import "../common.blocks/user/user";
 @import "../common.blocks/form/form";
-@import "../common.blocks/side/side";
+@import "../common.blocks/row/row";
 @import "../common.blocks/date-group/date-group";
 @import "../common.blocks/input/input";
 @import "../common.blocks/dropdown/dropdown";
@@ -31,13 +31,18 @@
   .helvetica;
   min-height: 100vh;
   &__header {
-    margin-bottom: 40px;
+    margin-bottom: 24px;
+  }
+  @media (min-width: 426px) {
+    &__header {
+      margin-bottom: 40px;
+    }
   }
 }
 
-.main {
+.event-page {
   @extend .grow;
-  width: 90%;
+  width: 100%;
   margin: 0 auto;
   @media (min-width: 426px) {
     width: 68.13%;
@@ -48,11 +53,14 @@
 .input, .user, .radio {
   &__clear {
     @extend .posa;
-    font-size: 20px;
+    font-size: 28px;
     color: $mildGray;
     cursor: pointer;
     &:hover {
       color: $brightGray;
+    }
+    @media (min-width: 426px) {
+      font-size: 20px;
     }
   }
 }
@@ -61,13 +69,19 @@
 .radio__clear {right: 10px;top: 8px;}
 
 
-.title {
+.event-page__title {
+  padding: 16px 16px 8px;
+  @media (min-width: 426px) {
+    margin: 16px 0;
+    padding: 0;
+  }
   @extend .i-flex;
   font-size: 1.3em;}
 .exit {
   @extend .i-flex,
           .align-center,
           .just-center;
+  display: none;
   min-width: 24px;
   min-height: 24px;
   float: right;
@@ -80,4 +94,20 @@
     clear: both;
   }
   &:hover {  color: $brightGray;  }
+  @media (min-width: 426px) {
+    display: flex;
+  }
+}
+
+.event-page__delete_mobile {
+  display: none;
+  @extend .just-center,
+          .align-center;
+  @media (max-width: 425px) {
+    display: flex;
+    padding: 20px 0;
+    font-weight: 500;
+    color: $red;
+    cursor: pointer;
+  }
 }

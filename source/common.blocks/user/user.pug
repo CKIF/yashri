@@ -1,14 +1,6 @@
 - var users = [{name: "Лекс Лютер", avatar: "luter", floor: 2},{name: "Томас Андерсон", avatar: "anderson", floor: 1},{name: "Дарт Вейдер", avatar: "vader", floor: 1},{name: "Кларк Кент", avatar: "kent", floor: 3},{name: "Джон Уик", avatar: "wick", floor: 1},{name: "Рик Декард", avatar: "deckard", floor: 2},{name: "Питер Блад", avatar: "blood", floor: 3},{name: "Ретт Батлер", avatar: "butler", floor: 3}];
 
-mixin user(name, avatar, floor, userTag)
-    - var tagName = userTag;
-    if tagName === 'OPTION'
-        +e(tagName).item.user(class='_' + avatar data-class="avatar" data-style= avatar ? "background-image: url(img/" + avatar + ".jpg)" : "background-image: url(http://www.gravatar.com/b3e04a46e85ad3e165d66f5d927eb609?d=monsterid&r=r&s=24);")
-            +b.user
-                +e.SPAN.name= name
-                if floor
-                    +e.SPAN.floor= ' 🞄 ' + floor + " этаж"
-    else
+mixin user(name, avatar, floor)
         +e(tagName).item&attributes(attributes)
             +b.user(class='_' + avatar)
                 +e.SPAN.avatar(class='_' + avatar)

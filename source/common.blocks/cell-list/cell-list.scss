@@ -5,4 +5,8 @@
   @extend .flex,
   .flex-row;
   list-style: none;
+  margin: 10px 0;
+  @media (min-width: 919px) {
+    margin: 15px 0;
+  }
 }

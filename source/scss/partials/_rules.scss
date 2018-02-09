@@ -4,6 +4,7 @@ $lightGray: #e9ecef;
 $mildGray: #afb4b8;
 $brightGray: #858E98;
 $blue: #007dff;
+$red: #ff3333;
 
 @mixin pseudo($display: block, $pos: absolute, $content: ''){
   content: $content;
@@ -16,7 +17,9 @@ $blue: #007dff;
 .flex-row {flex-flow: row wrap}
 .flex-column {flex-flow: column nowrap}
 .align-center {align-items: center}
+.just-start {justify-content: flex-start}
 .just-center {justify-content: center}
+.just-between {justify-content: space-between}
 .grow {flex-grow: 1}
 .max-width {width: 100%}
 .bold {font-weight: bold}

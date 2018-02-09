@@ -5,4 +5,8 @@
 
 .input {
   @extend .posr;
+  @media (min-width: 630px) {
+    margin-bottom: 16px;
+    margin-top: 0;
+  }
 }

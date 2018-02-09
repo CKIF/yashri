@@ -1,19 +1,7 @@
 .form_columnar {
   @extend .flex,
-  .flex-row,
+  .flex-column,
   .just-center,
   .max-width;
-
-  //mix form__side
-  &__side.side_left {
-    @media (min-width: 626px) {
-      margin-right: 16px;
-    }
-  }
-  &__side.side_right {
-    @media (min-width: 626px) {
-      margin-left: 16px;
-    }
-  }
 
 }

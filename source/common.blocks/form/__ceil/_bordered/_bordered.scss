@@ -1,0 +1,9 @@
+.form__ceil_bordered {
+  padding-bottom: 8px!important;
+  border-bottom: 8px solid $lightGray;
+
+  @media (min-width: 426px) {
+    padding-bottom: 0!important;
+    border-bottom: none;
+  }
+}

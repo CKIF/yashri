@@ -7,8 +7,10 @@
   padding: 0 24.6px;
   min-height: 71px;
   background: $white;
-  box-shadow: 0 -1px 0 0 $lightGray;
-  @media (max-width: 839px) {
+  border-top: 8px solid $lightGray;
+  @media (min-width: 426px) {
+    box-shadow: 0 -1px 0 0 $lightGray;
+    border: none;
     margin-top: 40px;
   }
 

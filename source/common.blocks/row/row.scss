@@ -1,13 +1,19 @@
 @import "_right/right";
 @import "_left/left";
+@import "_bordered/bordered";
 
-.side {
+.row {
   @extend .flex,
           .flex-column;
   flex: 1;
 
-  //mix .side:
+  //mix .row:
   &__input, &__dropdown, &__cell-list {
     margin: 24px 0;
+  }
+
+  @media (min-width: 919px) {
+    flex-flow: row nowrap;
+    align-items: flex-start;
   }
 }

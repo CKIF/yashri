@@ -1,0 +1,19 @@
+.date-group__time {
+  @extend .flex;
+  flex-flow: row nowrap;
+  @media (min-width: 630px) {
+    margin-left: 8px;
+  }
+
+}
+
+.date-group__time__left {margin-right: 11px}
+.date-group__time__right {margin-left: 11px}
+
+
+.date-group__time .input__header {
+  display: none;
+  @media (min-width: 630px) {
+    display: block;
+  }
+}

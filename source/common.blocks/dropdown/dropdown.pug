@@ -6,6 +6,5 @@ include ../user/user.pug
 mixin dropdown(id, title, disabled)
     +b.dropdown
         +e.LABEL.header(for=id)= title
-        +e.SELECT.select(id=id class!=attributes.class)&attributes(attributes)
-            +e.item(selected disabled hidden class="_disabled")= disabled
-                block
+        +b.INPUT.input__field(id=id class!=attributes.class)&attributes(attributes)
+        block

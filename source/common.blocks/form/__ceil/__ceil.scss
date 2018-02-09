@@ -1,0 +1,16 @@
+@import "_bordered/bordered";
+@import "_nopad/nopad";
+
+.form__ceil {
+  padding: 16px;
+
+  @media (min-width: 426px) {
+    padding: 0;
+  }
+  @media (min-width: 919px) {
+    flex-basis: 50%;
+
+    &:first-child {margin-right: 16px}
+    &:last-child {margin-left: 16px}
+  }
+}

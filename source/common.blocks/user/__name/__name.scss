@@ -2,6 +2,11 @@
   display: inline-block;
   vertical-align: middle;
   margin-left: 10px;
-  padding-right: 30px;
+  padding-right: 10px;
   font-size: 13px;
+}
+@media (min-width: 426px) {
+  .cell-list__user .user__name {
+    padding-right: 30px;
+  }
 }
