@@ -1,12 +1,14 @@
+var users = [{name: "Лекс Лютер", avatar: "luter", floor: 2},{name: "Томас Андерсон", avatar: "anderson", floor: 1},{name: "Дарт Вейдер", avatar: "vader", floor: 1},{name: "Кларк Кент", avatar: "kent", floor: 3},{name: "Джон Уик", avatar: "wick", floor: 1},{name: "Рик Декард", avatar: "deckard", floor: 2},{name: "Питер Блад", avatar: "blood", floor: 3},{name: "Ретт Батлер", avatar: "butler", floor: 3}];
+
+
 $(document).ready(function() {
 
-    var users = [{name: "Лекс Лютер", avatar: "luter", floor: 2},{name: "Томас Андерсон", avatar: "anderson", floor: 1},{name: "Дарт Вейдер", avatar: "vader", floor: 1},{name: "Кларк Кент", avatar: "kent", floor: 3},{name: "Джон Уик", avatar: "wick", floor: 1},{name: "Рик Декард", avatar: "deckard", floor: 2},{name: "Питер Блад", avatar: "blood", floor: 3},{name: "Ретт Батлер", avatar: "butler", floor: 3}];
 
     var dropdownItems = $(".dropdown__item, user, user"+users.avatar);
 
     var cellListItems = $(".cell-list__item").children();
-    console.log(dropdownItems);
-    console.log(cellListItems);
+    //console.log(dropdownItems);
+    //console.log(cellListItems);
 
     //$("#radioset").buttonset();
     jQuery(function ($) {
@@ -95,7 +97,23 @@ $(document).ready(function() {
         }
     );
 
+    var userAvatars = $('li [class*="user__avatar_"]');
+
+    if ($(window).width() < 426) {
+        userAvatars.each(function( ) {
+            var userAvatarsMobile = $( this ).attr('class') + '_image_big';
+            return $( this ).addClass(userAvatarsMobile);
+        });
+    }
+    else {
+        userAvatars.each(function( ) {
+            var userAvatarsMobile = $( this ).attr('class');
+            return $( this ).addClass(userAvatarsMobile);
+        });
+    }
+
 });
+
 
 //----------События клика----------
 

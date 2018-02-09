@@ -64,7 +64,10 @@
     }
   }
 }
-.input__clear {right: 10px;top: 27px;}
+.input__clear {right: 10px;top: 23px;
+@media (min-width: 426px) {
+  top: 27px;
+}}
 .user__clear {right: 6px;top: 2px;}
 .radio__clear {right: 10px;top: 8px;}
 
