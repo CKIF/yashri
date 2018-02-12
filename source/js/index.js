@@ -3,12 +3,23 @@ var users = [{name: "Лекс Лютер", avatar: "luter", floor: 2},{name: "Т
 
 $(document).ready(function() {
 
+    for (var index = 0; index < users.length; index++) {
+        var dropdownItem = $(".dropdown__item user-"+users[index].avatar);
+        var cellListItem = $(".cell-list__user user-"+users[index].avatar);
 
-    var dropdownItems = $(".dropdown__item, user, user"+users.avatar);
+        console.log(dropdownItem);
+        console.log(cellListItem);
 
-    var cellListItems = $(".cell-list__item").children();
-    //console.log(dropdownItems);
-    //console.log(cellListItems);
+/*        $( dropdownItem ).click(function(){
+            $( cellListItem ).addClass('show');
+        });*/
+
+        $( dropdownItem ).on( "click", function() {
+            $( cellListItem ).addClass('show');
+        });
+
+
+    }
 
     //$("#radioset").buttonset();
     jQuery(function ($) {
@@ -112,6 +123,16 @@ $(document).ready(function() {
         });
     }
 
+    var startTime = $('#begin').val();
+    var endTime = $('#end').val();
+
+    $('.radio__text strong').text(startTime + ' - ' + endTime);
+
+    $('.input__field_time').on('input', function() {
+        var startTime = $('#begin').val();
+        var endTime = $('#end').val();
+        $('.radio__text strong').text(startTime + ' - ' + endTime);
+    });
 });
 
 
@@ -120,3 +141,18 @@ $(document).ready(function() {
 $(".dropdown").click(function(){
     $(".dropdown__items").toggle();
 });
+
+
+$( ".input__clear" ).click(function(){
+    var parent = $( ".input__clear" ).parent('.input');
+    parent.children('.input__field').val('');
+});
+
+$( ".radio__clear" ).click(function(){
+    $( ".radio__clear" ).parent('.ui-state-active').removeClass('ui-checkboxradio-checked ui-state-active');
+});
+
+$( ".radio__label" ).click(
+    function(){
+        $( "radio__label" ).addClass('ui-checkboxradio-checked ui-state-active');
+    });

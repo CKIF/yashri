@@ -35,8 +35,8 @@ html(lang="en")
                         +b.date-group
                             +input('date', 'Дата', '_inline date-group__date')(placeholder='2 Февраль, 18' class='_date _max')
                             +e.time
-                                +input('begin', 'Начало', '_dash date-group__time__left')(placeholder='08:00' class='_time')
-                                +input('end', 'Конец', 'date-group__time__right')(placeholder='08:30' class='_time')
+                                +input('begin', 'Начало', '_dash date-group__time__left')(maxlength='5' pattern='[0-2]{1}[0-9]{1}:[0-5]{1}[0-9]{1}' value='08:00' placeholder='08:00' class='_time')
+                                +input('end', 'Конец', 'date-group__time__right')(maxlength='5' pattern='[0-2]{1}[0-9]{1}:[0-5]{1}[0-9]{1}' value='08:30' placeholder='08:30' class='_time')
 
 
 
