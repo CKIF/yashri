@@ -1,6 +1,4 @@
 .cell-list__item {
-  display: flex;
-  margin: 5px;
   width: 100%;
   max-height: 32px;
   line-height: 32px;
@@ -15,4 +13,12 @@
     max-height: 24px;
     line-height: 24px;
   }
+}
+
+.cell-list__item {
+  display: none;
+}
+.cell-list__item.show {
+  @extend .flex;
+  margin: 5px;
 }
